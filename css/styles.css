@@ -18,7 +18,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--base-text-color);
-  margin: 0;
 }
   
 .card-flex {
@@ -42,13 +41,11 @@ body {
   padding: 0 15px;
 }
 
-/* Normalize */
-  
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.list {
+  list-style: none;
 }
+
+/* Normalize */
   
 ul, p, h4, h3, h2, h1 {
   margin: 0px;
@@ -59,10 +56,6 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-.list {
-  list-style: none;
 }
 
 /* Header */
@@ -87,14 +80,8 @@ img {
   margin-right: 50px;
 }
 
-.contacts-list {
+.contacts-list:not(:first-child) {
   margin-left: 50px;
-  display: flex;
-  align-items: center;
-}
-
-.contacts-list:first-child {
-  margin-left: 0px;
 }
 
 .navigation {
@@ -146,6 +133,9 @@ img {
 
 .contact-link {
   color: var(--text-color-grey);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .navigation-link-active {
@@ -155,27 +145,20 @@ img {
 .contact-icon-mail {
   width: 16px;
   height: 12px;
-  fill: var(--text-color-grey);
+  fill: currentColor;
   margin-right: 10px;
 }
 
 .contact-icon-phone {
   width: 10px;
   height: 16px;
-  fill: var(--text-color-grey);
+  fill: currentColor;
   margin-right: 10px;
 }
 
-.contacts-list {
-  cursor: pointer;
-}
-
-.contacts-list:hover .contact-icon-phone, .contacts-list:hover .contact-icon-mail {
+.contacts-list:hover .contact-icon-phone, .contacts-list:hover .contact-icon-mail,
+.contacts-list:focus .contact-icon-phone, .contacts-list:focus .contact-icon-mail {
   fill: var(--accent-color);
-}
-
-.contacts-list:hover .contact-link {
-  color: var(--accent-hover-color);
 }
 
 /* Solution section */
@@ -185,6 +168,8 @@ img {
 }
 
 .solution {
+  max-width: 1600px;
+  margin: 0 auto;
   background-color: var(--dark-background);
   background-image: 
   linear-gradient(0deg, rgba(47, 48, 58, 0.4),  rgba(47, 48, 58, 0.4)), 
@@ -225,8 +210,9 @@ img {
   cursor: pointer;
 }
 
-.solution-button:hover {
-  background-color: var(--accent-hover-color) ;
+.solution-button:hover,
+.solution-button:focus {
+  background-color: var(--accent-color) ;
 }
 
 /* Benefits section */
@@ -268,7 +254,6 @@ img {
   margin-bottom: 30px;
   background: var(--light-background);
   border-radius: 4px;
-  border: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -346,6 +331,7 @@ img {
   height: 20px;
   fill: var(--grey-background-icon);
   cursor: pointer;
+  display: flex;
 }
 
 .team-social-list {
@@ -357,7 +343,6 @@ img {
 }
 
 .team-icon {
-  border: 1px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -367,12 +352,14 @@ img {
   cursor: pointer;
 }
 
-.team-icon:hover {
-  background-color: var(--accent-hover-color);
+.team-icon:hover,
+.team-icon:focus {
+  background-color: var(--accent-color);
   
 }
 
-.team-icon:hover .social-icon {
+.team-icon:hover .social-icon,
+.team-icon:focus .social-icon {
   fill: var(--text-color-white);
 }
 
@@ -399,7 +386,6 @@ img {
 }
 
 .icon-element {
-  box-sizing: border-box;
   width: 170px;
   height: 92px;
   border: 1px solid #AFB1B8;
@@ -410,12 +396,14 @@ img {
   cursor: pointer;
 }
 
-.icon-element:hover {
-  border-color: var(--accent-hover-color);
+.icon-element:hover,
+.icon-element:focus {
+  border-color: var(--accent-color);
 }
 
-.icon-element:hover .company-icon {
-  fill: var(--accent-hover-color);
+.icon-element:hover .company-icon,
+.icon-element:focus .company-icon {
+  fill: var(--accent-color);
 }
 
   /* Footer */
@@ -472,6 +460,7 @@ img {
   height: 20px;
   fill: var(--text-color-white);
   cursor: pointer;
+  display: flex;
 }
 
 .footer-icon-list {
@@ -487,14 +476,16 @@ img {
 
 .container-footer {
   display: flex;
+  align-items: baseline;
 }
 
 .container-footer-icon {
   margin-left: 70px;
 }
 
-.footer-icon-list:hover {
-  background-color: var(--accent-hover-color);
+.footer-icon-list:hover,
+.footer-icon-list:focus {
+  background-color: var(--accent-color);
 }
 
 /* Portfolio section */
@@ -525,14 +516,16 @@ img {
   cursor: pointer;
 }
 
-.product-card:hover {
+.product-card:hover,
+.product-card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px
    rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
 
 
-.filters-button:hover {
+.filters-button:hover
+.filters-button:focus {
   background: var(--accent-color);
   color: var(--text-color-white);
   cursor: pointer;
