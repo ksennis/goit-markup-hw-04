@@ -524,7 +524,7 @@ img {
 }
 
 
-.filters-button:hover
+.filters-button:hover,
 .filters-button:focus {
   background: var(--accent-color);
   color: var(--text-color-white);
